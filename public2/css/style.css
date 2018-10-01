@@ -1,0 +1,172 @@
+/* ヘッター */
+header{
+  text-align: center ;
+  background-color: #F4F4F4;
+  padding: 0.5em 0 ;					/* 上下の余白 */
+	margin-bottom: 3em ;				/* 他のブロックとのスペース */
+}
+.logo-wrapper{
+  margin: 0;			/* スペース */
+	padding: 0 ;		/* 余白 */
+	line-height: 0.5 ;	/* 行の高さ */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-space, .right-user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.logo{
+  width: 100px ;		/* 横幅 */
+	height: auto ;		/* 高さ */
+}
+.user-icon{
+  margin-right: 5px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+/* メイン */
+.hero-wrapper{
+	margin: 0 auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 10px 0 ;		/* 上下左右の余白を0にしておく */
+  text-align: center;
+}
+
+.btn{
+  padding:8px 24px;
+  color:white;
+  display:inline-block;
+  background-color:#1DA1F2;
+  border-radius:30px;
+  text-decoration: none;
+  width: 130px;
+}
+
+/* ボタン */
+.btn:hover{
+  opacity:0.8;
+}
+
+.fab{
+  margin-right:5px;
+}
+
+.img{
+  display: block;
+}
+
+.hero-icon{
+  display: block;
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 80px;
+  border-radius: 20px;
+}
+
+.feature-wrapper{
+	margin: 80px auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 30px 0 ;		/* 上下左右の余白を0にしておく */
+  text-align: center;
+  background-color: #F4F4F4;
+}
+
+.feature-content{
+  padding: 40px 0;
+  display: block;
+}
+.feature-icon{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 80px;
+  border-radius:50%;
+}
+
+.howto-wrapper{
+	margin: 0 auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 0 ;		/* 上下左右の余白を0にしておく */
+  text-align: center;
+  margin: 100px 0;
+}
+
+.howto-img{
+  width: 230px;
+}
+
+.when-wrapper{
+  margin: 80px auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 30px ;		/* 上下左右の余白を0にしておく */
+  text-align: center;
+  margin: 100px 0;
+  background-color:#F4F4F4;
+}
+.when-content{
+  padding: 30px ;		/* 上下左右の余白を0にしておく */
+}
+
+.when-img{
+  width: 200px;
+}
+
+
+.adv-wrapper{
+  margin: 0 auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 0 ;		/* 上下左右の余白を0にしておく */
+  text-align: center;
+  margin: 100px 0;
+}
+.adv-title{
+  padding: 20px 0;
+}
+
+
+/* フッター */
+footer{
+  font-size: 15px;
+	text-align: center ;				/* テキスト、画像の真ん中寄せ */
+	margin-top: 2em ;					/* 他のブロックとのスペース */
+	padding: 3em 0 ;					/* 上下の余白 */
+	background: #F4F4F4 ;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+.kiyaku-title{
+  text-align: center;
+}
+.main-orange{
+  color: #FEAD16;
+}
+
+.inner-wrapper{
+  padding: 0 200px
+}
+
+
+/*===============================================
+画面の横幅が740pxまで（スマホ用）
+===============================================*/
+@media screen and (max-width: 650px) {
+  .hero-title, .howto-title, .when-title, .adv-title, .kiyaku-title{
+    font-size: 26px;
+  }
+  .feature-subtitle, .howto-subtitle{
+    font-size: 18px;
+  }
+
+  .inner-wrapper{
+    padding: 0 20px
+  }
+
+}
