@@ -22,6 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Twitter
 Route::view('twitterlogin', 'auth.twitterlogin')->name('twitterlogin');
 
-Route::get('auth/login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
-//Route::get('auth/login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+Route::get('auth/login', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProviderCallback');
+
