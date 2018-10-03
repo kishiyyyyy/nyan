@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Twitter
+Route::view('twitterlogin', 'auth.twitterlogin')->name('twitterlogin');
+
+Route::get('auth/login', 'Auth\SocialAccountController@redirectToProvider');
+Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProviderCallback');
+
