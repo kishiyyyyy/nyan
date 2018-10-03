@@ -25,7 +25,6 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->string('twitter_id')->unique()->nullable();
             $table->string('twitter_name')->nullable();
-            $table->string('twitter_myimage')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

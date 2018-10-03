@@ -9,13 +9,18 @@ use Socialite;
 
 class SocialAccountController extends Controller
 {
-    // 各認証サービスへリダイレクト
+    // Twitter サービスへリダイレクト
     public function redirectToProvider($provider) {
+//dd($provider);
+
         return Socialite::driver($provider)->redirect();
+
+        // return Socialite::driver('twitter')->with(['fource_url' => true ])->redirect();
     }
 
     // 認証サービスからのコールバック
-    public function handleProviderCallback($provider) {
+    public function handleProviderCallback() {
+dd('aa');
 
         try {
             $providerUser = Socialite::driver($provider)->user();
