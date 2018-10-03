@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 207 254">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-6, .cls-8 {
+        fill: #f3f3f3;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        stroke: #f9f8f8;
+      }
+
+      .cls-9 {
+        fill: #eee;
+      }
+
+      .cls-10 {
+        filter: url(#Case);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="長方形_301" data-name="長方形 301" class="cls-1" width="207" height="254" transform="translate(84 1362)"/>
+    </clipPath>
+    <filter id="Case" x="-127.5" y="-134.5" width="461.281" height="631" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="49.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f6f6f6"/>
+      <stop offset="1" stop-color="#ececec"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f3f3f3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f3f3f3"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <g id="howto-item" class="cls-2" transform="translate(-84 -1362)">
+    <g id="iPhone_X_-_Light" data-name="iPhone X - Light" transform="translate(-77.165 1302)">
+      <g class="cls-10" transform="matrix(1, 0, 0, 1, 161.17, 60)">
+        <path id="Case-2" data-name="Case" class="cls-1" d="M22.137,0H142.144a22.137,22.137,0,0,1,22.137,22.137V311.863A22.137,22.137,0,0,1,142.144,334H22.137A22.137,22.137,0,0,1,0,311.863V22.137A22.137,22.137,0,0,1,22.137,0Z" transform="translate(21 14)"/>
+      </g>
+      <path id="Bezel" class="cls-3" d="M18.253,0h121.56a18.253,18.253,0,0,1,18.253,18.253V309.533a18.253,18.253,0,0,1-18.253,18.253H18.253A18.253,18.253,0,0,1,0,309.533V18.253A18.253,18.253,0,0,1,18.253,0Z" transform="translate(185.272 77.107)"/>
+      <path id="Glass" class="cls-4" d="M17.26,0H139.254a17.215,17.215,0,0,1,17.26,17.17V309.062a17.215,17.215,0,0,1-17.26,17.17H17.26A17.215,17.215,0,0,1,0,309.062V17.17A17.215,17.215,0,0,1,17.26,0Z" transform="translate(186.049 77.884)"/>
+      <g id="Camera" transform="translate(281.2 83.709)">
+        <ellipse id="楕円形_7" data-name="楕円形 7" class="cls-5" cx="2.913" cy="2.913" rx="2.913" ry="2.913" transform="translate(0 0)"/>
+        <circle id="楕円形_8" data-name="楕円形 8" class="cls-4" cx="2.524" cy="2.524" r="2.524" transform="translate(0.388 0.388)"/>
+        <ellipse id="楕円形_10" data-name="楕円形 10" class="cls-6" cx="1.748" cy="1.748" rx="1.748" ry="1.748" transform="translate(1.165 1.165)"/>
+        <ellipse id="楕円形_9" data-name="楕円形 9" class="cls-7" cx="0.583" cy="0.388" rx="0.583" ry="0.388" transform="translate(2.33 1.165)"/>
+      </g>
+      <path id="Ear_Piece" data-name="Ear Piece" class="cls-8" d="M1.859.5H23.22a1.359,1.359,0,1,1,0,2.719H1.859A1.359,1.359,0,0,1,1.859.5Z" transform="translate(251.766 84.957)"/>
+      <path id="Screen" class="cls-9" d="M130.881,315.358H14.758A14.775,14.775,0,0,1,0,300.6V14.758A14.775,14.775,0,0,1,14.758,0H30.4a2.646,2.646,0,0,1,2.031,2.008c.064.281.131.649.208,1.074.149.819.333,1.835.608,2.861a7.362,7.362,0,0,0,7.2,5.72c1.989.021,14.387.025,24.437.025,18.489,0,39.7-.015,40.7-.025a7.362,7.362,0,0,0,7.2-5.72c.275-1.029.46-2.046.609-2.864.078-.428.144-.793.207-1.072A2.56,2.56,0,0,1,115.6,0h15.283a14.775,14.775,0,0,1,14.758,14.758V300.6A14.775,14.775,0,0,1,130.881,315.358Z" transform="translate(191.486 83.321)"/>
+    </g>
+  </g>
+</svg>
