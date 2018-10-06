@@ -42,8 +42,11 @@ class SocialAccountController extends Controller
                 $user->name = $twitter_user->getName();
                 $user->nickname = $twitter_user->getNickname();
 
+                $user->save();
+
             }
 
+            // twitter 情報が取得できているか、投稿ページができたら書き換える。
             dd($user, $twitter_user->getId(), $twitter_user->getNickname(), $twitter_user);
 
 
