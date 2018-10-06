@@ -47,8 +47,11 @@ class SocialAccountController extends Controller
             }
 
             // twitter 情報が取得できているか、投稿ページができたら書き換える。
-            dd($user, $twitter_user->getId(), $twitter_user->getNickname(), $twitter_user);
+            //dd($user, $twitter_user->getId(), $twitter_user->getNickname(), $twitter_user);
 
+            auth()->login($user, true);
+
+            return redirect()->route('form');
 
         } catch (\Exception $e) {
             dd($e);
