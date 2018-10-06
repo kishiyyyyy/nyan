@@ -15,12 +15,9 @@ Route::get('/', function () {
     return view('top');
 });
 
-//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Twitter
-Route::view('twitterlogin', 'auth.twitterlogin')->name('twitterlogin');
-
+// Twitter login
 Route::get('auth/login', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProviderCallback');
