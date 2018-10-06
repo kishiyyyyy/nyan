@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 //Auth::routes();
@@ -24,4 +24,3 @@ Route::view('twitterlogin', 'auth.twitterlogin')->name('twitterlogin');
 
 Route::get('auth/login', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProviderCallback');
-
