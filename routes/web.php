@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Twitter login
 Route::get('auth/login', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProviderCallback');
+
+// 投稿ページ
+Route::view('form', 'form')->name('form');
