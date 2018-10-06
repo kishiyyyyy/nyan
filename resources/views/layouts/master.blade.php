@@ -9,7 +9,6 @@
   <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yield('title')</title>
 </head>
 
 <body>
