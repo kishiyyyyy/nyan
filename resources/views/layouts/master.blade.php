@@ -14,7 +14,7 @@
 <body>
   <header>
     <h1 class="logo-wrapper">
-      <div class="left-space"></div>
+      <div class="left-space"> 　　</div>
       <div class="center-logo"><a href="#"><img class="logo" src="./img/nyan.png" alt=""></a></div>
       <div class="right-user"><a href="#"><img class="user-icon" src="{{ Auth::user()->avatar }}" alt=""></a>
     </h1>
