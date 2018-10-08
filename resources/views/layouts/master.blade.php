@@ -21,7 +21,7 @@
             <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
           </summary>
           <div class="account-nav">
-            <a href="#" class="account-nav-item">ログアウト</a>
+            <a href="/auth/logout" class="account-nav-item">ログアウト</a>
           </div>
         </details>
       @endif
