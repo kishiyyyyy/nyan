@@ -15,14 +15,16 @@
 <body>
   <header>
       <a href="#"><img class="logo" src="./img/nyan.png" alt=""></a>
-      <details class="account">
-        <summary>
-          <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
-        </summary>
-        <div class="account-nav">
-          <a href="#" class="account-nav-item">ログアウト</a>
-        </div>
-      </details>
+      @if(Auth::check())
+        <details class="account">
+          <summary>
+            <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
+          </summary>
+          <div class="account-nav">
+            <a href="#" class="account-nav-item">ログアウト</a>
+          </div>
+        </details>
+      @endif
   </header>
 
 
