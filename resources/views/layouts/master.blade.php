@@ -32,6 +32,9 @@
 
 <footer>
   <p><a href="#">利用規約</a>　｜　<a href="#">プライバシーポリシー</a></p>
+  <div class="offical-account-link">
+    <a href="https://twitter.com/nyan_iritec" target="_blank"><span class="fab fa-twitter"></span>nyan公式アカウント</a>
+  </div>
   <p>©irie development. All rights reserved.</p>
 </footer>
 
