@@ -29,6 +29,7 @@
   <title>nyan | 猫になる</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}">
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css">
   <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -39,17 +40,27 @@
 
 <body>
   <header>
-    <h1 class="logo-wrapper">
-      <div class="left-space"> 　　</div>
-      <div class="center-logo"><a href="#"><img class="logo" src="./img/nyan.png" alt=""></a></div>
-      <div class="right-user"><a href="#"><img class="user-icon" src="{{ Auth::user()->avatar }}" alt=""></a>
-    </h1>
+      <a href="#"><img class="logo" src="./img/nyan.png" alt=""></a>
+      @if(Auth::check())
+        <details class="account">
+          <summary>
+            <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
+          </summary>
+          <div class="account-nav">
+            <a href="/auth/logout" class="account-nav-item">ログアウト</a>
+          </div>
+        </details>
+      @endif
   </header>
+
 
 @yield('content')
 
 <footer>
   <p><a href="#">利用規約</a>　｜　<a href="#">プライバシーポリシー</a></p>
+  <div class="offical-account-link">
+    <a href="https://twitter.com/nyan_iritec" target="_blank"><span class="fab fa-twitter"></span>nyan公式アカウント</a>
+  </div>
   <p>©irie development. All rights reserved.</p>
 </footer>
 

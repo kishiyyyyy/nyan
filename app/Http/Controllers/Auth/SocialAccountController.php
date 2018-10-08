@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -57,7 +58,10 @@ class SocialAccountController extends Controller
             dd($e);
             return redirect("/");
         }
-
     }
 
+    public function logout(){
+      Auth::logout();
+      return redirect("/");
+    }
 }
