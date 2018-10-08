@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}">
+  <link rel="stylesheet" type="text/css" href="./css/normalize.css">
   <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,12 +14,19 @@
 
 <body>
   <header>
-    <h1 class="logo-wrapper">
-      <div class="left-space"> 　　</div>
-      <div class="center-logo"><a href="#"><img class="logo" src="./img/nyan.png" alt=""></a></div>
-      <div class="right-user"><a href="#"><img class="user-icon" src="{{ Auth::user()->avatar }}" alt=""></a>
-    </h1>
+      <a href="#"><img class="logo" src="./img/nyan.png" alt=""></a>
+      @if(Auth::check())
+        <details class="account">
+          <summary>
+            <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
+          </summary>
+          <div class="account-nav">
+            <a href="/auth/logout" class="account-nav-item">ログアウト</a>
+          </div>
+        </details>
+      @endif
   </header>
+
 
 @yield('content')
 
