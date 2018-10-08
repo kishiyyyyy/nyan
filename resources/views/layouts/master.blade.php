@@ -25,13 +25,16 @@
 	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-
+  
   <title>nyan | 猫になる</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}">
   <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
 </head>
 
 <body>
