@@ -1,36 +1,79 @@
 /* ヘッター */
 header{
-  text-align: center ;
   background-color: #F4F4F4;
   padding: 0.5em 0 ;					/* 上下の余白 */
 	margin-bottom: 3em ;				/* 他のブロックとのスペース */
-}
-.logo-wrapper{
-  margin: 0;			/* スペース */
-	padding: 0 ;		/* 余白 */
-	line-height: 0.5 ;	/* 行の高さ */
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: relative;
 }
 
-.left-space, .right-user{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-
+/* ヘッダー中央のロゴ */
 .logo{
-  width: 100px ;		/* 横幅 */
-	height: auto ;		/* 高さ */
+  position: absolute;
+  width: 100px ;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
-.user-icon{
-  margin-right: 5px;
+
+/* ヘッダー右のユーザアカウント*/
+.account{
+  position: absolute;
   width: 40px;
+  top: 8px;
+  right: 10px;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon{
+  position: relative;
+  width: 100%;
   border-radius: 20px;
 }
+
+.account-nav{
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  padding: 6px;
+  text-align: center;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 8px 0 rgba(39,37,37,.12);
+  box-shadow: 0 2px 8px 0 rgba(39,37,37,.12);
+}
+
+/* リスト上に▲マークが表示されないように */
+summary {
+      display:block;
+}
+summary::-webkit-details-marker {
+      display:none;
+}
+
+.account-nav-item {
+    display: block;
+    padding: 8px;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.user-icon:hover{
+  opacity:0.5;
+}
+
+.account-nav:hover{
+  background-color: #f5f8fa;
+}
+
+
 
 /* メイン */
 .hero-wrapper{
