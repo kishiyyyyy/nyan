@@ -48,13 +48,13 @@ class SocialAccountController extends Controller
 
             }
 
-            // ログイン
-            auth()->login($user, true);
-
             // 画像保存
             $contents = file_get_contents($user->avatar);
             $disk = Storage::disk('public');
             $disk->put($user->image_path() . $user->image_file(), $contents);
+
+            // ログイン
+            auth()->login($user, true);
 
             // 投稿画面へ遷移
             return redirect()->route('form');
