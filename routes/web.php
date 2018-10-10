@@ -31,14 +31,15 @@ Route::view('form', 'form')->name('form');
 // サービス理念
 Route::get('/identity', function () {
     return view('identity');
-});
+})->name('identity');
+
 
 // 利用規約
 Route::get('/kiyaku', function () {
     return view('kiyaku');
-});
+})->name('kiyaku');
 
 // プライバシーポリシー
 Route::get('/privacy', function () {
     return view('privacy');
-});
+})->name('privacy');
