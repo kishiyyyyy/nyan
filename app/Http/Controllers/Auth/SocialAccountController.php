@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use Socialite;
+use Illuminate\Support\Facades\Storage;
 
 class SocialAccountController extends Controller
 {
@@ -47,14 +48,19 @@ class SocialAccountController extends Controller
 
             }
 
-            // twitter 情報が取得できているか、投稿ページができたら書き換える。
-            //dd($user, $twitter_user->getId(), $twitter_user->getNickname(), $twitter_user);
+            // 画像保存
+            $contents = file_get_contents($user->avatar);
+            $disk = Storage::disk('public');
+            $disk->put($user->image_path() . $user->image_file(), $contents);
 
+            // ログイン
             auth()->login($user, true);
 
+            // 投稿画面へ遷移
             return redirect()->route('form');
 
         } catch (\Exception $e) {
+            // エラー時の表示は検討する。
             dd($e);
             return redirect("/");
         }
