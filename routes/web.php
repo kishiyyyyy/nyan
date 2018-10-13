@@ -26,7 +26,12 @@ Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProvide
 Route::get('auth/logout', 'Auth\SocialAccountController@logout')->name('logout');
 
 // 投稿ページ
-Route::view('form', 'form')->name('form');
+Route::get('/form', function() {
+    // ログイン済み
+    if ( Auth::check()) {
+        return view('form');
+    }
+})->name('form');
 
 // サービス理念
 Route::get('/identity', function () {
