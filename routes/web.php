@@ -43,3 +43,9 @@ Route::get('/kiyaku', function () {
 Route::get('/privacy', function () {
     return view('privacy');
 })->name('privacy');
+
+// エラー画面
+Route::get('/error', function () {
+    return view('error');
+})->name('error');
+

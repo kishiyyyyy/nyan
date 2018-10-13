@@ -60,9 +60,9 @@ class SocialAccountController extends Controller
             return redirect()->route('form');
 
         } catch (\Exception $e) {
-            // エラー時の表示は検討する。
+            // エラー画面へ遷移
             dd($e);
-            return redirect("/");
+            return redirect()->route('error');
         }
     }
 
