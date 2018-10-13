@@ -65,9 +65,16 @@
 
 <div class="adv-wrapper">
   <h1 class="adv-title">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
-  <a href="auth/login" class="btn">
+  @if (Auth::check())
+    <a href="" class="btn">
     <span class="fab fa-twitter"></span>
-    Twitterログイン
-  </a>
+      ログインしています
+    </a>
+  @else
+    <a href="auth/login" class="btn">
+    <span class="fab fa-twitter"></span>
+      Twitterログイン
+    </a>
+  @endif
 </div>
 @endsection
