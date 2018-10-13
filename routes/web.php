@@ -26,4 +26,31 @@ Route::get('oauth/callback/twitter', 'Auth\SocialAccountController@handleProvide
 Route::get('auth/logout', 'Auth\SocialAccountController@logout')->name('logout');
 
 // 投稿ページ
-Route::view('form', 'form')->name('form');
+Route::get('/form', function() {
+    // ログイン済み
+    if ( Auth::check()) {
+        return view('form');
+    }
+})->name('form');
+
+// サービス理念
+Route::get('/identity', function () {
+    return view('identity');
+})->name('identity');
+
+
+// 利用規約
+Route::get('/kiyaku', function () {
+    return view('kiyaku');
+})->name('kiyaku');
+
+// プライバシーポリシー
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('privacy');
+
+// エラー画面
+Route::get('/error', function () {
+    return view('error');
+})->name('error');
+

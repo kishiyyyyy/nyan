@@ -27,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // ユーザー画像保存フォルダ
+    public function image_path() : string {
+        return 'users_image\\';
+    }
+
+    // ユーザー画像ファイル名
+    public function image_file() :string {
+        return $this->twitter_id . '.jpg';
+    }
 }

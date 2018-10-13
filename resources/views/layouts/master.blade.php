@@ -23,6 +23,16 @@
 	<meta name="twitter:description" content="現実から目を逸らしたい そんなときには、猫になる。
   Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。"/>
 	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
+=======
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127122553-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-127122553-1');
+</script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   
@@ -57,7 +67,7 @@
 @yield('content')
 
 <footer>
-  <p><a href="#">利用規約</a>　｜　<a href="#">プライバシーポリシー</a></p>
+  <p><a href="{{ route('identity') }}">サービス理念</a> ｜ <a href="{{ route('kiyaku') }}">利用規約</a> ｜ <a href="{{ route('privacy') }}">プライバシーポリシー</a> ｜ <a href="https://form.run/@iritec-nyan-2222">お問い合わせ</a></p>
   <div class="offical-account-link">
     <a href="https://twitter.com/nyan_iritec" target="_blank"><span class="fab fa-twitter"></span>nyan公式アカウント</a>
   </div>
