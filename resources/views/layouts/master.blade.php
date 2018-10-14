@@ -67,7 +67,7 @@
 @yield('content')
 
 <footer>
-  <p><a href="{{ route('identity') }}">サービス理念</a> ｜ <a href="{{ route('kiyaku') }}">利用規約</a> ｜ <a href="{{ route('privacy') }}">プライバシーポリシー</a> ｜ <a href="https://form.run/@iritec-nyan-2222">お問い合わせ</a></p>
+  <p><a href="{{ route('identity') }}">サービス理念</a> ｜ <a href="{{ route('kiyaku') }}">利用規約</a> ｜ <a href="{{ route('privacy') }}">プライバシーポリシー</a> ｜ <a href="https://nyan-iritec.booth.pm/">nyan公式グッズショップ</a> ｜ <a href="https://form.run/@iritec-nyan-2222">お問い合わせ</a></p>
   <div class="offical-account-link">
     <a href="https://twitter.com/nyan_iritec" target="_blank"><span class="fab fa-twitter"></span>nyan公式アカウント</a>
   </div>
