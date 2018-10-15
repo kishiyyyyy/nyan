@@ -199,6 +199,23 @@ a{
   padding: 0 200px
 }
 
+.links{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links li{
+  position: relative;
+  padding: 0 13px;
+}
+
+.links li:not(:first-child):before{
+  position: absolute;
+  content: '|';
+  left: -2px;
+}
 
 /*===============================================
 画面の横幅が740pxまで（スマホ用）

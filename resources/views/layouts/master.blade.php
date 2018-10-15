@@ -23,6 +23,7 @@
 	<meta name="twitter:description" content="現実から目を逸らしたい そんなときには、猫になる。
   Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。"/>
 	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127122553-1"></script>
 <script>
@@ -66,7 +67,13 @@
 @yield('content')
 
 <footer>
-  <p><a href="{{ route('identity') }}">サービス理念</a> ｜ <a href="{{ route('kiyaku') }}">利用規約</a> ｜ <a href="{{ route('privacy') }}">プライバシーポリシー</a> ｜ <a href="https://nyan-iritec.booth.pm/">nyan公式グッズショップ</a> ｜ <a href="https://form.run/@iritec-nyan-2222">お問い合わせ</a></p>
+  <ul class="links">
+    <li><a href="{{ route('identity') }}" target="_blank">サービス理念</a></li>
+    <li><a href="{{ route('kiyaku') }}" target="_blank">利用規約</a></li>
+    <li><a href="{{ route('privacy') }}" target="_blank">プライバシーポリシー</a></li>
+    <li><a href="https://nyan-iritec.booth.pm/" target="_blank">nyan公式グッズショップ</a></li>
+    <li><a href="https://form.run/@iritec-nyan-2222" target="_blank">お問い合わせ</a></li>
+  </ul>
   <div class="offical-account-link">
     <a href="https://twitter.com/nyan_iritec" target="_blank"><span class="fab fa-twitter"></span>nyan公式アカウント</a>
   </div>
