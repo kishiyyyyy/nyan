@@ -10,6 +10,8 @@ use App\User;
 use Socialite;
 use Illuminate\Support\Facades\Storage;
 
+use TweetService;
+
 class SocialAccountController extends Controller
 {
     // Twitter サービスへリダイレクト
@@ -53,6 +55,24 @@ class SocialAccountController extends Controller
             $disk = Storage::disk('public');
             $disk->put($user->image_path() . $user->image_file(), $contents);
 
+            // OAuth One プロバイダ
+            $token = $twitter_user->token;
+            $token_secret = $twitter_user->tokenSecret;
+
+            //ランダムなネコ画像を取得
+            $img_path = TweetService::selectedRandomImage();
+
+            if (!$img_path ) {
+                return redirect()->route('error');
+            }
+
+            TweetService::uploadTwitterProfile($token, $token_secret, $img_path);
+
+            // セッションにトークンを保存
+            session()->put('token', $token);
+            session()->put('tokenSecret', $token_secret);
+            session()->put('image_path', storage_path() . '/app/public/users_image/' . $user->image_file());
+
             // ログイン
             auth()->login($user, true);
 
@@ -67,7 +87,15 @@ class SocialAccountController extends Controller
     }
 
     public function logout(){
-      Auth::logout();
-      return redirect("/");
+
+        // プロフィール画像を元に戻す
+        $token = session()->get('token');
+        $token_secret = session()->get('tokenSecret');
+        $image_path = session()->get('image_path');
+
+        TweetService::uploadTwitterProfile($token, $token_secret, $image_path);
+
+        Auth::logout();
+        return redirect("/");
     }
 }
