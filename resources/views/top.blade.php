@@ -29,7 +29,7 @@
   <div class="feature-content">
     <img class="feature-icon" src="./img/twitter-white02.svg" alt="">
     <h2 class="feature-subtitle m-b1 m-t1">「にゃーん」とツイート</h2>
-    <p class="feature-txt">猫の画像付きでツイートされます。<br>
+    <p class="feature-txt">気持ちを「にゃーん」に込めて。<br>
       フォロワーにも束の間の癒しをプレゼント。</p>
   </div>
 
