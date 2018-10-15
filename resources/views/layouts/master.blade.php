@@ -23,7 +23,6 @@
 	<meta name="twitter:description" content="現実から目を逸らしたい そんなときには、猫になる。
   Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。"/>
 	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
-=======
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127122553-1"></script>
 <script>
@@ -71,7 +70,7 @@
   <div class="offical-account-link">
     <a href="https://twitter.com/nyan_iritec" target="_blank"><span class="fab fa-twitter"></span>nyan公式アカウント</a>
   </div>
-  <p>©irie development. All rights reserved.</p>
+  <p>©︎ 2018 nyan</p>
 </footer>
 
 </body>
