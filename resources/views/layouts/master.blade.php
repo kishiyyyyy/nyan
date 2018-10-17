@@ -50,7 +50,7 @@
 
 <body>
   <header>
-      <a href="#"><img class="logo" src="./img/nyan.png" alt=""></a>
+      <a href="{{ url('/') }}"><img class="logo" src="./img/nyan.png" alt=""></a>
       @if(Auth::check())
         <details class="account">
           <summary>
