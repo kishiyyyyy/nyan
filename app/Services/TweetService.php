@@ -8,6 +8,9 @@ namespace App\Services;
  * Class TweetService
  * @package App\Services
  */
+
+use Abraham\TwitterOAuth\TwitterOAuth;
+
 class TweetService
 {
 
@@ -18,7 +21,7 @@ class TweetService
      */
     public static function selectedRandomImage()
     {
-        $image_list = glob('images/*');
+        $image_list = glob(public_path() . '/img/cats/*');
 
         if (!$image_list) {
             return false;
@@ -27,5 +30,26 @@ class TweetService
         $image_name = $image_list[array_rand($image_list, 1)];
 
         return $image_name;
+    }
+
+    /**
+     * Twitterにプロフィール画像をアップロード
+     *
+     */
+    public function uploadTwitterProfile($token, $token_secret, $image_path) {
+
+        $consumer_key = env('TWITTER_CLIENT_ID');
+        $consumer_secret = env('TWITTER_CLIENT_SECRET');
+        $image = base64_encode(file_get_contents( $image_path ));
+
+        $to = new TwitterOAuth( $consumer_key,
+                                $consumer_secret,
+                                $token,
+                                $token_secret);
+
+        $req = $to->post('account/update_profile_image', array('image' => $image));
+
+        return $req;
+
     }
 }
