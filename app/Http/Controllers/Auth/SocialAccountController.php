@@ -34,7 +34,7 @@ class SocialAccountController extends Controller
                 $user = User::create([
                     'twitter_id' => $twitter_user->getId(),
                     'email' => $twitter_user->getEmail(),
-                    'avatar' => $twitter_user->getAvatar(),
+                    'avatar' => $twitter_user->avatar_original,
                     'name' => $twitter_user->getName(),
                     'nickname' => $twitter_user->getNickname(),
                 ]);
@@ -42,7 +42,7 @@ class SocialAccountController extends Controller
             } else {
 
                 $user->email = $twitter_user->getEmail();
-                $user->avatar = $twitter_user->getAvatar();
+                $user->avatar = $twitter_user->avatar_original;
                 $user->name = $twitter_user->getName();
                 $user->nickname = $twitter_user->getNickname();
 
