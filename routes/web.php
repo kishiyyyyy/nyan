@@ -11,6 +11,8 @@
 |
 */
 
+//use App\Http\Controllers\FormController;
+
 Route::get('/', function () {
     return view('top');
 });
@@ -32,6 +34,12 @@ Route::get('/form', function() {
         return view('form');
     }
 })->name('form');
+
+// にゃーんボタン
+Route::get('/form/nyan', 'FormController@commandNyan');
+
+// 現実に戻るボタン
+Route::get('/form/returnReal', 'FormController@returnReal');
 
 // サービス理念
 Route::get('/identity', function () {

@@ -4,10 +4,19 @@
 
     <h1 class="hero-title">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
     <img class="hero-icon" src="./img/cat01.svg" alt="">
-    <a href="https://twitter.com/intent/tweet?text=にゃーん&hashtags=nyan" class="btn m-b4 m-t2">
-      <span class="fab fa-twitter"></span>
-      にゃーん
-    </a>
+    <p>
+        <a href="form/nyan" class="btn m-b4 m-t2">
+        <span class="fab fa-twitter"></span>
+        にゃーん
+        </a>
+    </p>
+    @if( Request::session()->has('cat_image_path') )
+        <p>
+            <a href="form/returnReal" class="btn m-b4 m-t2">
+                現実に戻る
+            </a>
+        </p>
+    @endif
   </div>
 
 @endsection
