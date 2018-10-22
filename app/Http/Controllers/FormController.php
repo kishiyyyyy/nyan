@@ -21,71 +21,40 @@ class FormController extends Controller
         $token = session()->get('token');
         $token_secret = session()->get('tokenSecret');
 
-        // 初回のみ、ランダムなネコ画像を取得
-        if ( !session()->has('cat_image_path') ) {
-            $img_path = TweetService::selectedRandomImage();
+        $img_path = TweetService::selectedRandomImage();
 
-            if (!$img_path ) {
+        if (!$img_path ) {
                 return redirect()->route('error');
-            }
-
-            $cat_image_path = $img_path;
-
-            // 状態
-            session()->put('cat_image_path', $cat_image_path); //私はネコです。
-
-            // プロフィール画像変更
-            TweetService::uploadTwitterProfile($token, $token_secret, $cat_image_path);
         }
+
+        $cat_image_path = $img_path;
+
+        // セッションに猫状態を保持
+        session()->put('cat_image_path', $cat_image_path);
+
+        // プロフィール画像変更
+        TweetService::uploadTwitterProfile($token, $token_secret, $cat_image_path);
 
         // ツイート作成
         $message = self::makeTweet();
-
-        // ツイート
-        TweetService::updateTweet($token, $token_secret, $message );
+         // ツイート
+        TweetService::updateTweet($token, $token_secret, $message);
 
         return redirect()->route('form');
+
 
     }
 
     /**
-     *
-     * ツイート文言の作成
-     *
-     */
-    public function makeTweet() {
-
-        $message = "";
-
-        // deplication エラー回避のため
-        $j = rand(0, 50);
-        $message = "にゃ";
-        for ($i = 0; $i <= $j; $i++ ) {
-            $message = $message . "〜";
-        }
-        $message = $message . "ん";
-
-        //ランダムでカタカナに変換
-        $kana = false;
-        if (rand(0,2) == 2) {
-            $kana = true;
-        }
-
-        if ($kana) {
-            $message = mb_convert_kana($message, "KVC");
-        }
-
-        // エクステンションつける
-        if (rand(0,3) == 1) {
-            $message = $message . "！";
-        }
-
-        $message = $message . " #nyan";
-
-        return $message;
-
+    *
+    * ツイート文言の作成
+    *
+    */
+    public function makeTweet()
+    {
+      $message = "にゃーん #nyan https://nyan-iritec.herokuapp.com";
+      return $message;
     }
-
 
     /**
      *
@@ -94,8 +63,8 @@ class FormController extends Controller
      */
     public function returnReal()
     {
-
-        session()->put('cat_image_path', null); // 私はネコではない
+        // セッションに人間状態を保持
+        session()->put('cat_image_path', null);
 
         // プロフィール画像を元に戻す
         $token = session()->get('token');

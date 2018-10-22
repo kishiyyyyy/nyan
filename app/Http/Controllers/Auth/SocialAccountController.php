@@ -50,7 +50,7 @@ class SocialAccountController extends Controller
 
             }
 
-            // 画像保存
+            // 画像保存する
             $contents = file_get_contents($user->avatar);
             $disk = Storage::disk('public');
             $disk->put($user->image_path() . $user->image_file(), $contents);
