@@ -7,17 +7,19 @@
     @if( !(Request::session()->has('cat_image_path')) )
       <p>
         <a href="form/nyan"
-          class="btn m-b4 m-t2"><span class="fab fa-twitter"></span>
+          class="btn m-t2"><span class="fab fa-twitter"></span>
           にゃーん
         </a>
       </p>
+      ※Twitterのアイコンが猫になり、にゃーんとツイートされます。
     @else
       <p>
         <a href="form/returnReal"
-          class="btn m-b4 m-t2"><span class="fab fa-twitter">
+          class="btn m-t2"><span class="fab fa-twitter">
           現実に戻る
         </a>
       </p>
+      ※Twitterのアイコンが元に戻ります
     @endif
   </div>
 
