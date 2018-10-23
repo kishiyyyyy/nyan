@@ -93,7 +93,9 @@ class SocialAccountController extends Controller
         $token_secret = session()->get('tokenSecret');
         $image_path = session()->get('image_path');
 
-        TweetService::uploadTwitterProfile($token, $token_secret, $image_path);
+        if (!blank($image_path)) {
+            TweetService::uploadTwitterProfile($token, $token_secret, $image_path);
+        }
 
         Auth::logout();
         return redirect("/");
