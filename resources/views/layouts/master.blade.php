@@ -35,7 +35,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  
+
   <title>nyan | 猫になる</title>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}">
@@ -54,7 +54,15 @@
       @if(Auth::check())
         <details class="account">
           <summary>
-            <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
+            @if( Request::session()->has('cat_image_path') )
+                <a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('cat_image_path'))) }}" alt=""></a>
+            @else
+                @if(Request::session()->has('profile_image_path') )
+                    <a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('profile_image_path'))) }}" alt=""></a>
+                @else
+                    <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
+                @endif
+            @endif
           </summary>
           <div class="account-nav">
             <a href="/auth/logout" class="account-nav-item">ログアウト</a>

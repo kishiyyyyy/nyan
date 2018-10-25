@@ -50,28 +50,20 @@ class SocialAccountController extends Controller
 
             }
 
-            // 画像保存
+            // 画像保存する
             $contents = file_get_contents($user->avatar);
             $disk = Storage::disk('public');
             $disk->put($user->image_path() . $user->image_file(), $contents);
+
+            session()->put('profile_image_path', storage_path() . '/app/public/users_image/' . $user->image_file());
 
             // OAuth One プロバイダ
             $token = $twitter_user->token;
             $token_secret = $twitter_user->tokenSecret;
 
-            //ランダムなネコ画像を取得
-            $img_path = TweetService::selectedRandomImage();
-
-            if (!$img_path ) {
-                return redirect()->route('error');
-            }
-
-            TweetService::uploadTwitterProfile($token, $token_secret, $img_path);
-
             // セッションにトークンを保存
             session()->put('token', $token);
             session()->put('tokenSecret', $token_secret);
-            session()->put('image_path', storage_path() . '/app/public/users_image/' . $user->image_file());
 
             // ログイン
             auth()->login($user, true);
@@ -91,11 +83,12 @@ class SocialAccountController extends Controller
         // プロフィール画像を元に戻す
         $token = session()->get('token');
         $token_secret = session()->get('tokenSecret');
-        $image_path = session()->get('image_path');
+        $profile_image_path = session()->get('profile_image_path');
 
-        if (!blank($image_path)) {
-            TweetService::uploadTwitterProfile($token, $token_secret, $image_path);
-        }
+        TweetService::uploadTwitterProfile($token, $token_secret, $profile_image_path);
+
+        session()->put('cat_image_path', null);
+        session()->put('profile_image_path', null);
 
         Auth::logout();
         return redirect("/");
