@@ -33,6 +33,7 @@ class TweetService
     }
 
     /**
+     *
      * Twitterにプロフィール画像をアップロード
      *
      */
@@ -48,8 +49,29 @@ class TweetService
                                 $token_secret);
 
         $req = $to->post('account/update_profile_image', array('image' => $image));
+        return $req;
+
+    }
+
+    /**
+     *
+     *  つぶやく
+     *
+     */
+    public function updateTweet($token, $token_secret, $status) {
+
+        $consumer_key = env('TWITTER_CLIENT_ID');
+        $consumer_secret = env('TWITTER_CLIENT_SECRET');
+
+        $to = new TwitterOAuth( $consumer_key,
+                                $consumer_secret,
+                                $token,
+                                $token_secret);
+
+        $req = $to->post("statuses/update", array("status" => $status));
 
         return $req;
 
     }
+
 }
