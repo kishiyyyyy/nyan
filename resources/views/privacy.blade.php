@@ -32,4 +32,8 @@
     <a href="https://form.run/@iritec-nyan-2222" target="_blank">お問い合わせフォーム</a>からご連絡ください。
 
   </div>
+  
+  <div class="btn-wrapper">
+    <a href="{{ url('/') }}" class="btn">TOPに戻る</a>
+  </div>
 @endsection

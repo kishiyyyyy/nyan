@@ -16,4 +16,7 @@
       私たちはそのにゃーんで世界を変える。にゃーんで世界を救う。</p>
     <p>にゃーんプロジェクトメンバー一同</p>
   </div>
+  <div class="btn-wrapper">
+    <a href="{{ url('/') }}" class="btn">TOPに戻る</a>
+  </div>
 @endsection
