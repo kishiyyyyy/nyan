@@ -80,4 +80,8 @@
 
 </div>
 
+<div class="btn-wrapper">
+    <a href="{{ url('/') }}" class="btn">TOPに戻る</a>
+</div>
+
 @endsection
