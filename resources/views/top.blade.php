@@ -4,12 +4,12 @@
 <div class="hero-wrapper">
 
   <h1 class="hero-title m-b4">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
-  <p class="hero-txt">Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。</p>
+  <p class="hero-txt">Twitterの中で好きな時間だけ猫になり「にゃーん」とツイートできるサービスです。</p>
   <img class="hero-icon" src="./img/cat01.svg" alt="">
   @if (Auth::check())
-    <a href="" class="btn">
+    <a href="/form" class="btn">
     <span class="fab fa-twitter"></span>
-      ログインしています
+      猫になる画面に戻る
     </a>
   @else
     <a href="auth/login" class="btn">
@@ -24,7 +24,7 @@
     <img class="feature-icon " src="./img/cat02.svg" alt="">
     <h2 class="feature-subtitle m-b1 m-t1">Twiterのアイコンが猫に</h2>
     <p class="feature-txt">Twitterのアイコンが猫になります。<br>
-      １時間後に自動で元のアイコンに戻ります。</p>
+      現実に戻るボタンで元のアイコンに戻ります。</p>
   </div>
   <div class="feature-content">
     <img class="feature-icon" src="./img/twitter-white02.svg" alt="">
@@ -66,9 +66,9 @@
 <div class="adv-wrapper">
   <h1 class="adv-title">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
   @if (Auth::check())
-    <a href="" class="btn">
+    <a href="/form" class="btn">
     <span class="fab fa-twitter"></span>
-      ログインしています
+      猫になる画面に戻る
     </a>
   @else
     <a href="auth/login" class="btn">
