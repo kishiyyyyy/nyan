@@ -6,11 +6,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name=viewport content="width=device-width,initial-scale=1">
 	<meta name="description" content="現実から目を逸らしたい そんなときには、猫になる。
-  Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。">
+  Twitterの中で好きな時間だけ猫になり「にゃーん」とツイートできるサービスです。">
 	<meta name="keywords" content="nyan">
 	<meta property="og:title" content="nyan"/>
 	<meta property="og:description" content="現実から目を逸らしたい そんなときには、猫になる。
-  Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。"/>
+  Twitterの中で好きな時間だけ猫になり「にゃーん」とツイートできるサービスです。"/>
 	<meta property="og:type" content="website"/>
 	<meta property="og:url" content="https://nyan-iritec.herokuapp.com"/>
 	<meta property=”og:locale” content=”ja_JP”/>
@@ -21,7 +21,7 @@
 	<meta name="twitter:site" content="@nyan_iritec">
 	<meta name="twitter:title" content="nyan | 猫になる">
 	<meta name="twitter:description" content="現実から目を逸らしたい そんなときには、猫になる。
-  Twitterで１時間限定で猫になり「にゃーん」とツイートできるサービスです。"/>
+  Twitterの中で好きな時間だけ猫になり「にゃーん」とツイートできるサービスです。"/>
 	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
