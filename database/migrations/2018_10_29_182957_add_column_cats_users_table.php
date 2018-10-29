@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnImgpathUsersTable extends Migration
+class AddColumnCatsUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,8 @@ class AddColumnImgpathUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('img_path')->nullable();
+            $table->string('cat_img_path')->nullable();
+            $table->Boolean('cat_flg')->default(0);
         });
     }
 

@@ -58,7 +58,7 @@
                 <a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('cat_image_path'))) }}" alt=""></a>
             @else
                 @if(Request::session()->has('profile_image_path') )
-                    <a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('profile_image_path'))) }}" alt=""></a>
+                  	<a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('profile_image_path'))) }}" alt=""></a>
                 @else
                     <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
                 @endif

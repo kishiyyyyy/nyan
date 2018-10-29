@@ -55,7 +55,7 @@ class SocialAccountController extends Controller
             $disk->put($user->image_path() . $user->image_file(), $contents);
 
             //Userテーブルのimgpathカラムに画像のパスを格納する
-            $user->imgpath = storage_path();
+            $user->img_path = storage_path();
             $user->save();
 
             //session()->put('profile_image_path', storage_path() . '/app/public/users_image/' . $user->image_file());
@@ -84,18 +84,18 @@ class SocialAccountController extends Controller
     public function logout(){
       try {
 
-        //ログイン済みユーザをセッティング
+        //ログイン済みユーザをセット
         $user = Auth::user();
 
         // プロフィール画像を元に戻す
         $token = session()->get('token');
         $token_secret = session()->get('tokenSecret');
         //$profile_image_path = session()->get('profile_image_path');
-        $profile_image_path = $user->imgpath;
+        //$profile_image_path = $user->imgpath;
 
-        TweetService::uploadTwitterProfile($token, $token_secret, $profile_image_path);
-
-        session()->put('cat_image_path', null);
+        TweetService::uploadTwitterProfile($token, $token_secret, $user->img_path);
+        $user->cat_flg=0;
+        //session()->put('cat_image_path', null);
         //session()->put('profile_image_path', null);
 
         Auth::logout();
