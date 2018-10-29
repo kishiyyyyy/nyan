@@ -45,7 +45,6 @@ class SocialAccountController extends Controller
                 $user->avatar = $twitter_user->avatar_original;
                 $user->name = $twitter_user->getName();
                 $user->nickname = $twitter_user->getNickname();
-
                 $user->save();
 
             }
@@ -55,7 +54,11 @@ class SocialAccountController extends Controller
             $disk = Storage::disk('public');
             $disk->put($user->image_path() . $user->image_file(), $contents);
 
-            session()->put('profile_image_path', storage_path() . '/app/public/users_image/' . $user->image_file());
+            //Userテーブルのimgpathカラムに画像のパスを格納する
+            $user->imgpath = storage_path();
+            $user->save();
+
+            //session()->put('profile_image_path', storage_path() . '/app/public/users_image/' . $user->image_file());
 
             // OAuth One プロバイダ
             $token = $twitter_user->token;
@@ -79,18 +82,29 @@ class SocialAccountController extends Controller
     }
 
     public function logout(){
+      try {
+
+        //ログイン済みユーザをセッティング
+        $user = Auth::user();
 
         // プロフィール画像を元に戻す
         $token = session()->get('token');
         $token_secret = session()->get('tokenSecret');
-        $profile_image_path = session()->get('profile_image_path');
+        //$profile_image_path = session()->get('profile_image_path');
+        $profile_image_path = $user->imgpath;
 
         TweetService::uploadTwitterProfile($token, $token_secret, $profile_image_path);
 
         session()->put('cat_image_path', null);
-        session()->put('profile_image_path', null);
+        //session()->put('profile_image_path', null);
 
         Auth::logout();
         return redirect("/");
+
+        } catch (\Exception $e) {
+           // エラー画面へ遷移
+           dd($e);
+           return redirect()->route('error');
+       }
     }
 }
