@@ -76,6 +76,9 @@
 
 <footer>
   <ul class="links">
+		<!-- admax -->
+		<script src="//adm.shinobi.jp/o/0b791de8a7ee3574e9b22071ac1d4ffc"></script>
+		<!-- admax -->
     <li><a href="{{ route('identity') }}">サービス理念</a></li>
     <li><a href="{{ route('kiyaku') }}">利用規約</a></li>
     <li><a href="{{ route('privacy') }}">プライバシーポリシー</a></li>
