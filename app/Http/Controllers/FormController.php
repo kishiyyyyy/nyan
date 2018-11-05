@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Http\Request;
 
 use TweetService;
@@ -27,17 +26,11 @@ class FormController extends Controller
       $token = session()->get('token');
       $token_secret = session()->get('tokenSecret');
 
-      //$img_path = $user->imgpath;
       $user->cat_img_path = TweetService::selectedRandomImage();
 
       if (!$user->img_path) {
               return redirect()->route('error');
       }
-
-      $cat_image_path = $user->cat_imgpath;
-
-      // セッションに猫状態を保持
-      //session()->put('cat_image_path', $cat_image_path);
 
       // プロフィール画像変更
       TweetService::uploadTwitterProfile($token, $token_secret, $user->cat_img_path);
@@ -73,9 +66,6 @@ class FormController extends Controller
     public function returnReal()
     {
 
-        // セッションに人間状態を保持
-        //session()->put('cat_image_path', null);
-
         //ログイン済みユーザをセッティング
         $user = Auth::user();
 
@@ -83,15 +73,11 @@ class FormController extends Controller
         $token = session()->get('token');
         $token_secret = session()->get('tokenSecret');
 
-        //$image_path = $user->imgpath;
-        //$profile_image_path = $user->imgpath;
-
-        TweetService::uploadTwitterProfile($token, $token_secret, $image_path);
-        $user->cat_flg=1;
+        TweetService::uploadTwitterProfile($token, $token_secret, $user->img_path);
+        $user->cat_flg=0;
         $user->save();
 
         return redirect()->route('form');
 
     }
-
 }
