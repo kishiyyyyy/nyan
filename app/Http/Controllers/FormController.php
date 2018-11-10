@@ -32,6 +32,7 @@ class FormController extends Controller
               return redirect()->route('error');
         }
 
+        TweetService::uploadTwitterProfile($token, $token_secret, $user->cat_img_path);
         $user->is_cat_flg=1;
         $user->save();
 
