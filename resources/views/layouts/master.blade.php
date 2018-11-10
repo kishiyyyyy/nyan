@@ -1,4 +1,4 @@
-img/ogp.png<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
 
