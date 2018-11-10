@@ -4,22 +4,22 @@
 
     <h1 class="hero-title">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
     <img class="hero-icon" src="./img/cat01.svg" alt="">
-    @if( !(Request::session()->has('cat_image_path')) )
-      <p>
-        <a href="form/nyan"
-          class="btn m-t2"><span class="fab fa-twitter"></span>
-          にゃーん
-        </a>
-      </p>
-      ※Twitterのアイコンが猫になり、にゃーんとツイートされます。
-    @else
+    @if( Auth::user()->is_cat_flg )
       <p>
         <a href="form/returnReal"
           class="btn m-t2"><span class="fab fa-twitter">
-          現実に戻る
-        </a>
-      </p>
-      ※Twitterのアイコンが元に戻ります
+            現実に戻る
+          </a>
+        </p>
+        ※Twitterのアイコンが元に戻ります
+    @else
+    <p>
+      <a href="form/nyan"
+        class="btn m-t2"><span class="fab fa-twitter"></span>
+        にゃーん
+      </a>
+    </p>
+    ※Twitterのアイコンが猫になり、にゃーんとツイートされます。
     @endif
   </div>
 
