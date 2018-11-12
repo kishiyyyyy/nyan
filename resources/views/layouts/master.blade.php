@@ -14,15 +14,15 @@
 	<meta property="og:type" content="website"/>
 	<meta property="og:url" content="https://nyan-iritec.herokuapp.com"/>
 	<meta property=”og:locale” content=”ja_JP”/>
-	<meta property="og:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png"/>
-	<meta property="image_src" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
+	<meta property="og:image" content="https://nyan-iritec.herokuapp.com/img/ogp.png"/>
+	<meta property="image_src" content="https://nyan-iritec.herokuapp.com/img/ogp.png">
 	<meta property="fb:app_id" content="2251191688483866"/>
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@nyan_iritec">
 	<meta name="twitter:title" content="nyan | 猫になる">
 	<meta name="twitter:description" content="現実から目を逸らしたい そんなときには、猫になる。
   Twitterの中で好きな時間だけ猫になり「にゃーん」とツイートできるサービスです。"/>
-	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/public/img/ogp.png">
+	<meta name="twitter:image" content="https://nyan-iritec.herokuapp.com/img/ogp.png">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127122553-1"></script>
@@ -54,14 +54,10 @@
       @if(Auth::check())
         <details class="account">
           <summary>
-            @if( Request::session()->has('cat_image_path') )
-                <a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('cat_image_path'))) }}" alt=""></a>
-            @else
-                @if(Request::session()->has('profile_image_path') )
-                    <a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Request::session()->get('profile_image_path'))) }}" alt=""></a>
-                @else
-                    <a href="#"><img class="user-icon" src="./img/user.png" alt=""></a>
-                @endif
+						@if( Auth::user()->is_cat_flg )
+							<a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Auth::user()->cat_img_path)) }}" alt=""></a>
+  					@else
+							<a href="#"><img class="user-icon" src="data:image/png;base64,{{ base64_encode(file_get_contents(Auth::user()->img_path)) }}" alt=""></a>
             @endif
           </summary>
           <div class="account-nav">
