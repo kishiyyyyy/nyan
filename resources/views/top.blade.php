@@ -6,17 +6,10 @@
   <h1 class="hero-title m-b4">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
   <p class="hero-txt">Twitterの中で好きな時間だけ猫になり「にゃーん」とツイートできるサービスです。</p>
   <img class="hero-icon" src="./img/cat01.svg" alt="">
-  @if (Auth::check())
-    <a href="/form" class="btn">
-    <span class="fab fa-twitter"></span>
-      猫になる画面に戻る
-    </a>
-  @else
     <a href="auth/login" class="btn">
     <span class="fab fa-twitter"></span>
       Twitterログイン
     </a>
-  @endif
 </div>
 
 <div class="feature-wrapper">
@@ -65,16 +58,9 @@
 
 <div class="adv-wrapper">
   <h1 class="adv-title">現実から目を逸らしたい<br>そんなときには、猫になる</h1>
-  @if (Auth::check())
-    <a href="/form" class="btn">
-    <span class="fab fa-twitter"></span>
-      猫になる画面に戻る
-    </a>
-  @else
     <a href="auth/login" class="btn">
     <span class="fab fa-twitter"></span>
       Twitterログイン
     </a>
-  @endif
 </div>
 @endsection
