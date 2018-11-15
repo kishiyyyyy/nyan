@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
         if (\App::environment('production')) {
             \URL::forceScheme('https');
         }
+
+        //カラムの最大値を変更し、767bytes以上の文字列が入らないようにする
+        Schema::defaultStringLength(191);
 
     }
 
