@@ -23,8 +23,8 @@ class FormController extends Controller
         //ログイン済みユーザをセッティング
         $user = Auth::user();
 
-        $token = session()->get('token');
-        $token_secret = session()->get('tokenSecret');
+        $token = $user->token;
+        $token_secret = $user->token_secret;
 
         $user->cat_img_path = TweetService::selectedRandomImage();
 
@@ -68,8 +68,8 @@ class FormController extends Controller
         $user = Auth::user();
 
         // プロフィール画像を元に戻す
-        $token = session()->get('token');
-        $token_secret = session()->get('tokenSecret');
+        $token = $user->token;
+        $token_secret = $user->token_secret;
 
         TweetService::uploadTwitterProfile($token, $token_secret, $user->img_path);
         $user->is_cat_flg=0;

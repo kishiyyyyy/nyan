@@ -37,12 +37,9 @@ class SocialAccountController extends Controller
                     'avatar' => $twitter_user->avatar_original,
                     'name' => $twitter_user->getName(),
                     'nickname' => $twitter_user->getNickname(),
-                    'token' => $twitter_user->token,
-                    'token_secret'  => $twitter_user->tokenSecret
-                ]);
-
+                  ]);
             } else {
-
+                
                 $user->email = $twitter_user->getEmail();
                 $user->avatar = $twitter_user->avatar_original;
                 $user->name = $twitter_user->getName();
@@ -59,15 +56,12 @@ class SocialAccountController extends Controller
 
             //Userテーブルのimgpathカラムに画像のパスを格納する
             $user->img_path =storage_path() . '/app/public/users_image/' . $user->image_file();
+
+            //Userテーブルにtokenを保存する
+            $user->token=$twitter_user->token;
+            $user->token_secret=$twitter_user->tokenSecret;
+
             $user->save();
-
-            // OAuth One プロバイダ
-            $token = $twitter_user->token;
-            $token_secret = $twitter_user->tokenSecret;
-
-            // セッションにトークンを保存
-            session()->put('token', $token);
-            session()->put('tokenSecret', $token_secret);
 
             // ログイン
             auth()->login($user, true);
@@ -88,8 +82,8 @@ class SocialAccountController extends Controller
        $user = Auth::user();
 
         // プロフィール画像を元に戻す
-        $token = session()->get('token');
-        $token_secret = session()->get('tokenSecret');
+        $token = $user->token;
+        $token_secret = $user->token_secret;
 
         TweetService::uploadTwitterProfile($token, $token_secret, $user->img_path);
 
