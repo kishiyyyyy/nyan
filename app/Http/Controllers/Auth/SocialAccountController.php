@@ -37,6 +37,8 @@ class SocialAccountController extends Controller
                     'avatar' => $twitter_user->avatar_original,
                     'name' => $twitter_user->getName(),
                     'nickname' => $twitter_user->getNickname(),
+                    'token' => $twitter_user->token,
+                    'token_secret'  => $twitter_user->tokenSecret
                 ]);
 
             } else {
