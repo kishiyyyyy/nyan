@@ -39,11 +39,16 @@ class SocialAccountController extends Controller
                     'nickname' => $twitter_user->getNickname(),
                   ]);
             } else {
+                $user->email = $twitter_user->getEmail();
+
                 //ユーザが猫ではない時はavaterを上書きする
                 if (!($user->is_cat_flg)){
                   $user->avatar = $twitter_user->avatar_original;
-                  $user->save();
                 }
+
+                $user->name = $twitter_user->getName();
+                $user->nickname = $twitter_user->getNickname();
+                $user->save();
 
             }
 
