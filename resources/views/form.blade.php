@@ -14,12 +14,12 @@
         ※Twitterのアイコンが元に戻ります
     @else
     <p>
-      <a href=""
+      <a href="form/nyan"
         class="btn m-t2"><span class="fab fa-twitter"></span>
         にゃーん
       </a>
     </p>
-    ※現在、猫になることはできません。サービス再開までしばらくおまちください。
+    ※Twitterのアイコンが猫になり、にゃーんとツイートされます。
     @endif
   </div>
 
