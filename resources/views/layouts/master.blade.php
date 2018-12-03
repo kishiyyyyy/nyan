@@ -49,7 +49,7 @@
 </head>
 
 <body>
-  <header style="margin-bottom: 0;">
+  <header>
       <a href="{{ url('/') }}"><img class="logo" src="./img/nyan.png" alt=""></a>
       @if(Auth::check())
         <details class="account">
@@ -66,13 +66,7 @@
         </details>
       @endif
   </header>
-{{-- mainte mode--}}
-  <div style="margin-bottom: 3rem; background-color: lightcoral; text-align: center; padding: 10px;">
-      <p>ただいま、にゃーんはメンテナンス状態です。新規のツイートはできません。</p>
-      <p>（「現実に戻る」ことは可能です）</p>
-      <p>大変申し訳ありませんが、サービス再開までしばらくおまちください。</p>
-  </div>
-{{-- mainte mode--}}
+
 
 @yield('content')
 
